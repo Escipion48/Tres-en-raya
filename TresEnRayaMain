@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    printf("Hola, bienvenido al juego de tres en raya\n"
+            "a continuacion tendra que escribir dos numeros\n"
+            "seguidos para colocar una marca en el juego\n"
+            "el primero es la altura y el segundo la anchura\n");
+
+    int i, j;
+    int** matriz = (char**) malloc (4*sizeof (char*));
+    for(i=0;i<4;i++){
+        matriz[i] = (char*) malloc (4*sizeof (char));
+    }
+    for(i=0;i<4;i++){
+        for(j=0;j<4;j++){
+            if(j==3){
+                matriz[i][j]='\0';
+            }
+            else{
+                matriz[i][j]='_';
+            }
+        }
+    }
+    for(i=0;i<3;i++){
+        printf("\n");
+        for(j=0;j<3;j++){
+            printf("%c ", matriz[i][j]);
+        }
+    }
+    printf("\n\nGracias por participar\n");
+    
+    return 0;
+}
